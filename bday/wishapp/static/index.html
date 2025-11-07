@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎁 Birthday Surprise 🎂</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 20px #fff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 30px #ffebf7; }
+    }
+    button {
+      margin-top: 25px;
+      padding: 15px 40px;
+      border: none;
+      background: #fff;
+      color: #ff69b4;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover { transform: scale(1.1); background: #ffe1ec; }
+    .fade-out { animation: fadeOut 1.5s forwards; }
+    @keyframes fadeOut { to { opacity: 0; transform: scale(1.1); } }
+  </style>
+</head>
+<body>
+  <h1>🎂 Tap to Open Your Birthday Surprise 💝</h1><br>
+  <h1>Mahh Spl One🫂</h1>
+  <button onclick="openGift()">Open Gift</button>
+
+  <audio id="bgMusic" src="l.opus" loop></audio>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    function openGift() {
+      music.play();
+      document.body.classList.add('fade-out');
+      setTimeout(() => window.location.href = 'message.html', 1500);
+    }
+  </script>
+</body>
+</html>
