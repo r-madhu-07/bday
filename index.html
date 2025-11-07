@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎁 Birthday Surprise 🎂</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* 🌸 Mobile Frame */
+    .mobile-frame {
+      width: 360px;
+      height: 700px;
+      background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+      border: 10px solid #fff;
+      border-radius: 40px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Simulate phone speaker */
+    .mobile-frame::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 3px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      text-shadow: 0 0 20px #fff;
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 10px;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 30px #ffebf7; }
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 35px;
+      border: none;
+      background: #fff;
+      color: #ff69b4;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: #ffe1ec;
+    }
+
+    .fade-out {
+      animation: fadeOut 1.5s forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; transform: scale(1.1); }
+    }
+
+    /* 📱 Responsive adjustment for smaller screens */
+    @media (max-width: 400px) {
+      .mobile-frame {
+        width: 95%;
+        height: 90vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-frame">
+    <h1>🎂 Tap to Open Your Birthday Surprise 💝</h1>
+    <h1>👇Mahh Spl One🫂</h1>
+    <button onclick="openGift()">Open Gift</button>
+  </div>
+
+  <audio id="bgMusic" src="l.opus" loop></audio>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+    function openGift() {
+      music.play();
+      document.querySelector('.mobile-frame').classList.add('fade-out');
+      setTimeout(() => window.location.href = 'message.html', 1500);
+    }
+  </script>
+</body>
+</html>

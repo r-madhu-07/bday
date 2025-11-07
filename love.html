@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 A Pastel Message for You 💖</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #c9ffbf, #f8bfff, #b5deff);
+    background-size: 400% 400%;
+    animation: pastelShift 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  @keyframes pastelShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .fade-out { opacity: 0; transform: scale(1.05); transition: 1.5s; }
+
+  /* 📱 Mobile Frame */
+  .mobile-frame {
+    width: 360px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 10px solid #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(15px);
+    z-index: 2;
+  }
+
+  /* Top speaker detail */
+  .mobile-frame::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 3px;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #7b2cbf;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #4a1752;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    overflow-y: auto;
+    max-height: 350px;
+    animation: fadeText 2s forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes fadeText { to { opacity: 1; } }
+
+  .button-group {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #ffc8dd, #ffafcc, #bde0fe);
+    color: #4a1752;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.07);
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(255, 175, 200, 0.6);
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 22px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.4) rotate(360deg); opacity: 0; }
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle 3s ease-in-out infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { transform: scale(0) translateY(0); opacity: 0; }
+    50% { transform: scale(1.5) translateY(-30px); opacity: 1; }
+  }
+
+  /* Responsive tweak */
+  @media (max-width: 400px) {
+    .mobile-frame {
+      width: 95%;
+      height: 90vh;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="mobile-frame">
+    <h2>💖 Mr.Azhaguraja 💖</h2>
+    <p><i>
+      "உன்னை நினைத்தாலே இன்னும் என் மனசு பட்டாம்பூச்சி போல பறக்குது.🌼  
+      💘 உன் பெயரை கேட்டவுடனே, என் இதயம் ஒரு பாட்டாக மாறுது. 🎵  
+      அந்த பாட்டு, உனக்காக மட்டுமே."<br><br>
+      💞 உன் கண்களில் விழுந்து போனேன், மீண்டும் வர விருப்பமில்லை.<br> 
+      🦋 உன் கண்கள் ஒரு கடல், நான் அதில் மூழ்கிய கப்பல். 🌊❤️<br>
+      ஒரு பார்வை போதும், என் நாள் முழுக்க மலர்ந்து விடும். 🌷<br>
+      "என் வாழ்க்கை ஒரு கவிதை என்றால், அதன் அழகான வரி நீ தான். 💖✨"<br>
+      உன் பெயரைச் சொல்லும் ஒவ்வொரு முறை, என் இதயம் ஒரு சிறிய கவிதை எழுதுகிறது... 💌🌷
+    </i></p>
+
+    <div class="button-group">
+      <button onclick="goBack()">← Back</button>
+      <button onclick="openMemories()">Our Memories 🌸</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="uv.opus" autoplay loop></audio>
+
+  <script>
+    function openMemories() {
+      document.body.classList.add('fade-out');
+      setTimeout(() => window.location.href = 'memories.html', 1500);
+    }
+
+    function goBack() {
+      document.body.classList.add('fade-out');
+      setTimeout(() => window.location.href = 'message.html', 1500);
+    }
+
+    const colors = ['#ffafcc', '#cdb4db', '#bde0fe', '#a2d2ff', '#ffc8dd'];
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 9000);
+    }
+    setInterval(createHeart, 500);
+
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 4000);
+    }
+    setInterval(createSparkle, 300);
+  </script>
+</body>
+</html>

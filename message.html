@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 A Pastel Message for You 💖</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fce1ec, #e7c6ff, #caffbf, #a0c4ff, #ffafcc);
+    background-size: 400% 400%;
+    animation: pastelShift 12s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  @keyframes pastelShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* 📱 Mobile frame */
+  .mobile-frame {
+    width: 360px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 40px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Speaker slot (top bar) */
+  .mobile-frame::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #7b2cbf;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    animation: fadeIn 2s ease;
+  }
+
+  .msg-box {
+    background: rgba(255,255,255,0.35);
+    border-radius: 25px;
+    padding: 15px 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    font-size: 1em;
+    color: #4a1752;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeBox 1s ease forwards;
+  }
+
+  .msg-box:nth-child(2) { animation-delay: 0.5s; }
+  .msg-box:nth-child(3) { animation-delay: 1.5s; }
+  .msg-box:nth-child(4) { animation-delay: 2.5s; }
+  .msg-box:nth-child(5) { animation-delay: 3.5s; }
+
+  @keyframes fadeBox {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .button-group {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 10px 25px;
+    background: linear-gradient(90deg, #cdb4db, #ffc8dd, #bde0fe);
+    color: #4a1752;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(255, 175, 200, 0.6);
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 22px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.4) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 400px) {
+    .mobile-frame {
+      width: 95%;
+      height: 90vh;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="mobile-frame">
+    <h2>💖 To My Favorite BOY 💖</h2>
+
+    <div class="msg-box">✨ Happy Happy Birthday Mine Chellameyyy❤️ Thank You for being a wonderful person in my life 😙 You are the reason for my happiness and king of my dreams 👑.. Not only love, happiness, partner, king — you are everything to me 🌍</div>
+
+    <div class="msg-box">🌸 Every moment spent with you feels like a huge happiness in my life which never fades till my last breath. Really I'm so blessed to have u as an amazing partner in my life 🎁</div>
+
+    <div class="msg-box">💫 You have a special place in my heart, a place no one else can fill. The love between us never ends! ♾️ I will never leave you chellameyyy 😙 Love you lotzzzz 💋</div>
+
+    <div class="msg-box">🎂 May your birthday be as magical as your heart — Thank you so much for being so loyal, caring, and showing countless love towards me 🥹.</div>
+
+    <div class="button-group">
+      <button onclick="goBack()">⬅ Back</button>
+      <button onclick="nextPage()">Next Surprise ➡️</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="vp.opus" autoplay loop></audio>
+
+  <script>
+    function nextPage() {
+      document.body.classList.add('fade-out');
+      setTimeout(() => window.location.href = 'love.html', 1000);
+    }
+
+    function goBack() {
+      document.body.classList.add('fade-out');
+      setTimeout(() => window.location.href = 'index.html', 1000);
+    }
+
+    const colors = ['#ffafcc', '#cdb4db', '#bde0fe', '#a2d2ff', '#ffc8dd'];
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 600);
+  </script>
+</body>
+</html>

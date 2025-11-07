@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📸 Our Sweet Memories 💖</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fce1f5, #e7d4ff, #d4f3ff, #ffe5ec);
+    background-size: 400% 400%;
+    animation: colorFlow 15s ease infinite;
+    color: #5e2b5b;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  @keyframes colorFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  header {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 20px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  }
+
+  .upload-area {
+    margin: 15px auto;
+    border: 2px dashed #d4a5ff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 85%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+  }
+
+  .upload-area:hover {
+    background: rgba(255,255,255,0.6);
+    transform: scale(1.02);
+  }
+
+  input[type="file"] {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #5e2b5b;
+  }
+
+  .memory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding-bottom: 60px;
+  }
+
+  .memory-card {
+    width: 90%;
+    max-width: 360px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 10px;
+    animation: fadeIn 1s ease;
+  }
+
+  .memory-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+  }
+
+  .memory-card textarea {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 0.95em;
+    resize: none;
+    outline: none;
+    background: rgba(255,255,255,0.8);
+    margin-top: 8px;
+    color: #4a1752;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  button {
+    margin: 10px 6px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #cdb4db, #ffc8dd, #bde0fe);
+    color: #4a1752;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.9em;
+    color: #80508b;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sparkle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%,100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .audio-player {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 480px) {
+    header {
+      font-size: 1.5em;
+      padding: 15px;
+    }
+    .memory-card {
+      width: 88%;
+      max-width: 340px;
+    }
+    textarea {
+      font-size: 0.9em;
+    }
+    button {
+      font-size: 0.9em;
+      padding: 8px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>💖 Our Sweet Memories 💞</header>
+
+  <div class="upload-area">
+    <p>Upload your favorite photos and write something beautiful 💬</p>
+    <input type="file" id="photoInput" accept="image/*" multiple>
+  </div>
+
+  <div class="memory-container" id="memoryContainer">
+    <div class="memory-card"><img src="1.jpg" alt="Memory 1"><textarea readonly>📅 17-03-2023 ❤️ 🌸 Our first smile together 🌸</textarea></div>
+    <div class="memory-card"><img src="v.jpg" alt="Memory 2"><textarea readonly>📅 21-05-2024 ❤️ ✨ The day you made me laugh endlessly ✨</textarea></div>
+    <div class="memory-card"><img src="b.jpg" alt="Memory 3"><textarea readonly>📅 13-09-2025 😍 😻 Gemini AI's Precious Gift for us 🎁</textarea></div>
+    <div class="memory-card"><img src="3.jpg" alt="Memory 4"><textarea readonly>📅 31-01-2025 🌼 💖 That moment felt like forever 💖</textarea></div>
+    <div class="memory-card"><img src="4.jpg" alt="Memory 5"><textarea readonly>📅 11-01-2007 🎀 The ordinary day turned extraordinary because of you 🎂</textarea></div>
+    <div class="memory-card"><img src="m.jpg" alt="Memory 6"><textarea readonly>🦋 Our love needs no words, just a look 👀</textarea></div>
+  </div>
+
+  <div>
+    <button onclick="window.location.href='love.html'">💖 Back</button>
+    <button onclick="window.location.href='index.html'">🏠 Home</button>
+  </div>
+
+  <footer>✨ Each picture tells a story — our story ✨</footer>
+
+  <audio class="audio-player" id="bgMusic" src="nee.opus" autoplay loop controls></audio>
+
+  <script>
+    const photoInput = document.getElementById('photoInput');
+    const memoryContainer = document.getElementById('memoryContainer');
+
+    photoInput.addEventListener('change', (event) => {
+      const files = event.target.files;
+      for (let file of files) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const card = document.createElement('div');
+          card.classList.add('memory-card');
+
+          const img = document.createElement('img');
+          img.src = e.target.result;
+
+          const textBox = document.createElement('textarea');
+          textBox.placeholder = "Write a memory here...";
+
+          card.appendChild(img);
+          card.appendChild(textBox);
+          memoryContainer.appendChild(card);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Floating sparkles ✨
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 3000);
+    }
+    setInterval(createSparkle, 250);
+
+    // Handle autoplay restriction
+    document.body.addEventListener('click', () => {
+      const bgMusic = document.getElementById('bgMusic');
+      if (bgMusic.paused) bgMusic.play();
+    });
+  </script>
+</body>
+</html>
